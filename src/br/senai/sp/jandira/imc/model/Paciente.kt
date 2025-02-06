@@ -1,3 +1,5 @@
+package br.senai.sp.jandira.imc.model
+
 import java.time.LocalDate
 import java.time.Period
 import kotlin.math.pow
