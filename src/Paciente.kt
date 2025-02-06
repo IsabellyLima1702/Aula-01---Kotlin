@@ -13,6 +13,20 @@ class Paciente {
         return peso / altura.pow(2)
     }
 
+    private fun  classificarImc(): String{
+        val imc = calcularImc()
+        val classificacao: String
+
+        if (imc < 18.5){
+            classificacao = "Abaixo do peso"
+        }else if (imc >= 18.5 && imc < 25.0){
+            classificacao = "Peso normal"
+        }else{
+            classificacao = "Acima do peso"
+        }
+        return classificacao
+    }
+
     fun exibirDados(){
         println("---------------------------")
         println("RESULTADOS")
@@ -22,6 +36,7 @@ class Paciente {
         println("ALTURA: $altura")
         println("IMC: ${calcularImc()}")
         println("IDADE: ${calcularIdade()}")
+        println("CLASSIFICAÇÃO: ${classificarImc()}")
         println("---------------------------")
     }
     fun calcularIdade(): Int{
